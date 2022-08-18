@@ -1,0 +1,121 @@
+/***************************************************
+マイページ
+***************************************************/
+header{
+  display: flex;
+  height: 60px;
+}
+
+.header_left{
+  display: flex;
+  align-items: center;
+  width: 30vw;
+}
+
+.header_logo{
+  margin-left: 20px;
+}
+.header_list_btn{
+  margin-left: 20px;
+}
+
+.header_right{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70vw;
+}
+
+.header_page_user{
+  margin-left: 20px;
+}
+
+.header_btns{
+  display: flex;
+}
+
+.header_btn_left{
+  margin-right: 20px;
+}
+
+.header_btn_right{
+  margin-right: 20px;
+}
+
+.index_main{
+  display: flex;
+  height: calc(100vh - 60px - 80px);
+}
+.index_main_left{
+  width: 30vw;
+  background-color: #79dae8;
+  padding: 20px;
+  border-bottom: solid 1px gainsboro;
+}
+
+.index_field{
+  width: 100%;
+  border: solid 1px black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.index_list_upper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.index_list_upper_left{
+  display: flex;
+}
+
+.index_list_name{
+  margin-right: 20px;
+}
+
+.index_list_upper_right{
+  display: flex;
+}
+
+.index_list_edit_btn{
+  margin-right: 20px;
+}
+
+.index_main_right{
+  padding: 20px;
+  width: 70vw;
+  background-color: #e8f9fd;
+}
+
+.index_item_field{
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px black;
+  width: 100%;
+  padding: 10px;
+}
+
+.index_item_upper{
+  display: flex;
+}
+
+.index_item_name{
+  margin-right: 20px;
+}
+
+.index_lower{
+  display: flex;
+  height: 80px;
+}
+
+.index_lower_left{
+  width: 30vw;
+  padding: 30px;
+  background-color: #79dae8;
+}
+
+.index_lower_right{
+  width: 70vw;
+  padding: 20px;
+  background-color: #e8f9fd;
+}

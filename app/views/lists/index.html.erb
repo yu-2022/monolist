@@ -1,8 +1,9 @@
 <div class="top1">
   <div class="top1_logo">MonoList</div>
+  <div class="top1_search_form">リスト検索フォーム</div>
   <div class="top1_btns">
     <% if user_signed_in? %>
-      <div><%= link_to current_user.user_name, '#', class: "top1_btn1" %></div>
+      <div><%= link_to 'My List', users_path, class: "top1_btn1" %></div>
       <div><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "top1_btn2" %></div>
     <% else %>
       <div><%= link_to 'ログイン', new_user_session_path, class: "top1_btn1" %></div>
@@ -13,7 +14,7 @@
 
 <div class="top2">
   <div class="top2_texts">
-    <div class="top2_text1">キャッチコピー</div>
+    <div class="top2_text1">Simple is best</div>
     <div class="top2_text2">使い方</div>
   </div>
 </div>
@@ -22,23 +23,6 @@
   <div class="top3_field">
     <div class="top3_title">Popular Lists</div>
     <div class="top3_list_field">
-      <div class="top_list_upper">
-        <div class="top_list_name">リスト名</div>
-        <div class="top_list_fav">いいね</div>
-        <div class="top_list_user">ユーザー名</div>
-      </div>
-      <div class="top_list_lower">
-        <div class="top_list_text">リスト説明</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="top4">
-  <div class="top4_field">
-    <div class="top4_title">Search Lists</div>
-    <div class="top4_search_form">リスト検索フォーム</div>
-    <div class="top4_list_field">
       <div class="top_list_upper">
         <div class="top_list_name">リスト名</div>
         <div class="top_list_fav">いいね</div>

@@ -14,17 +14,18 @@
 }
 
 .top1_btn1{
-  margin-right: 10px;
+  margin-right: 20px;
+  color: black;
 }
 
 .top1_btn2{
   margin-right: 10px;
+  color: black;
 }
 
 .top2{
   height: 300px;
-  background-image: url(images/sea.jpg);
-  background-size: cover;
+  background-color: #79dae8;
 }
 
 .top2_texts{
@@ -35,10 +36,13 @@
 
 .top2_text1{
   text-align: center;
+  color: white;
+  font-size: 30px;
 }
 
 .top2_text2{
   text-align: center;
+  color: white;
 }
 
 .top3{
@@ -66,28 +70,6 @@
 .top_list_upper{
   display: flex;
   justify-content: space-between;
-}
-
-.top4{
-  margin: 20px 0;
-}
-
-.top4_field{
-  margin: 0 auto;
-  width: 400px;
-}
-
-.top4_title{
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.top4_list_field{
-  margin: 0 auto;
-  padding: 10px;
-  border: 1px black solid;
-  width: 100%;
-  border-radius: 10px;
 }
 
 footer{

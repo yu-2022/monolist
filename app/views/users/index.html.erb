@@ -1,0 +1,64 @@
+<header>
+  <div class="header_left">
+    <div><%= link_to 'MonoList', root_path, class: "header_logo" %></div>
+    <div><%= link_to 'リスト作成', "#", class: "header_list_btn" %></div>
+  </div>
+  <div class="header_right">
+    <div class="header_page_user">ユーザーさんのリスト</div>
+    <div class="header_btns">
+      <% if user_signed_in? %>
+        <div><%= link_to current_user.user_name, "#", class: "header_btn_left" %></div>
+        <div><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header_btn_right" %></div>
+      <% else %>
+        <div><%= link_to 'ログイン', new_user_session_path, class: "header_btn_left" %></div>
+        <div><%= link_to '新規登録', new_user_registration_path, class: "header_btn_right" %></div>
+      <% end %>
+    </div>
+  </div>
+</header>
+
+<div class="index_main">
+  <div class="index_main_left">
+    <div class="index_field">
+      <div class="index_list_upper">
+        <div class="index_list_upper_left">
+          <div class="index_list_name">リスト名</div>
+          <div class="index_list_fav_btn">いいねボタン</div>
+        </div>
+        <div class="index_list_upper_right">
+          <div class="index_list_edit_btn">編集</div>
+          <div class="index_list_delete_btn">削除</div>
+        </div>
+      </div>
+      <div class="index_list_lower">
+        <div class="index_list_text">リスト説明</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="index_main_right">
+    <div class="index_item_field">
+      <div class=index_item_left>
+        <div class="index_item_upper">
+          <div class="index_item_name">アイテム名</div>
+          <div class="index_item_date">日付</div>
+        </div>
+        <div class="index_item_lower">
+          <div class="index_item_text">アイテム説明</div>
+        </div>
+      </div>
+      <div class=index_item_right>
+        <div class="index_item_image">アイテム画像</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="index_lower">
+  <div class="index_lower_left">
+    <div class="index_search_form">タグ検索フォーム</div>
+  </div>
+  <div class="index_lower_right">
+    <div class="new_item_form">アイテム追加フォーム</div>
+  </div>
+</div>
