@@ -3,7 +3,7 @@
   <div class="top1_search_form">リスト検索フォーム</div>
   <div class="top1_btns">
     <% if user_signed_in? %>
-      <div><%= link_to 'My List', users_path, class: "top1_btn1" %></div>
+      <div><%= link_to 'My List', users_path(id: current_user.id), class: "top1_btn1" %></div>
       <div><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "top1_btn2" %></div>
     <% else %>
       <div><%= link_to 'ログイン', new_user_session_path, class: "top1_btn1" %></div>

@@ -4,10 +4,14 @@
     <div><%= link_to 'リスト作成', "#", class: "header_list_btn" %></div>
   </div>
   <div class="header_right">
-    <div class="header_page_user">ユーザーさんのリスト</div>
+    <div class="header_page_user">
+      <% if user_signed_in? && @user.id != current_user.id %>
+        #{@user.user_name}さんのリスト
+      <% end %>
+    </div>
     <div class="header_btns">
       <% if user_signed_in? %>
-        <div><%= link_to current_user.user_name, "#", class: "header_btn_left" %></div>
+        <div><%= link_to current_user.user_name, user_path(current_user.id), class: "header_btn_left" %></div>
         <div><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header_btn_right" %></div>
       <% else %>
         <div><%= link_to 'ログイン', new_user_session_path, class: "header_btn_left" %></div>
@@ -16,6 +20,15 @@
     </div>
   </div>
 </header>
+
+<div class="index_sort">
+  <div class="index_sort_left">
+    <div class="index_sort_list">リスト並び替え</div>
+  </div>
+  <div class="index_sort_right">
+    <div class="index_sort_item">アイテム並び替え</div>
+  </div>
+</div>
 
 <div class="index_main">
   <div class="index_main_left">
@@ -26,6 +39,7 @@
           <div class="index_list_fav_btn">いいねボタン</div>
         </div>
         <div class="index_list_upper_right">
+          <div class="index_list_privacy">公開範囲</div>
           <div class="index_list_edit_btn">編集</div>
           <div class="index_list_delete_btn">削除</div>
         </div>
