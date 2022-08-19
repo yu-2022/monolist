@@ -1,17 +1,16 @@
 <header>
   <div class="header_left">
-    <div><%= link_to 'MonoList', root_path, class: "header_logo" %></div>
-    <div><%= link_to 'リスト作成', "#", class: "header_list_btn" %></div>
+    <%= link_to 'MonoList', root_path, class: "header_logo" %>
   </div>
   <div class="header_right">
-    <div class="header_page_user">ユーザーさんのリスト</div>
+    <div class="header_page_user"></div>
     <div class="header_btns">
       <% if user_signed_in? %>
-        <div><%= link_to current_user.user_name, user_path(current_user.id), class: "header_btn_left" %></div>
-        <div><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header_btn_right" %></div>
+        <%= link_to 'My List', users_path(id: current_user.id), class: "header_btn_left" %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header_btn_right" %>
       <% else %>
-        <div><%= link_to 'ログイン', new_user_session_path, class: "header_btn_left" %></div>
-        <div><%= link_to '新規登録', new_user_registration_path, class: "header_btn_right" %></div>
+        <%= link_to 'ログイン', new_user_session_path, class: "header_btn_left" %>
+        <%= link_to '新規登録', new_user_registration_path, class: "header_btn_right" %>
       <% end %>
     </div>
   </div>
