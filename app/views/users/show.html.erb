@@ -1,0 +1,40 @@
+<header>
+  <div class="header_left">
+    <div><%= link_to 'MonoList', root_path, class: "header_logo" %></div>
+  </div>
+  <div class="header_right">
+    <div class="header_page_user"></div>
+    <div class="header_btns">
+      <% if user_signed_in? %>
+        <div><%= link_to current_user.user_name, user_path(current_user.id), class: "header_btn_left" %></div>
+        <div><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header_btn_right" %></div>
+      <% else %>
+        <div><%= link_to 'ログイン', new_user_session_path, class: "header_btn_left" %></div>
+        <div><%= link_to '新規登録', new_user_registration_path, class: "header_btn_right" %></div>
+      <% end %>
+    </div>
+  </div>
+</header>
+
+<div class="main_base">
+  <div class="main_base_">
+    <div class="show_user_name_field"><%= @user.user_name %></div>
+    <div class="show_user_text"><%= @user.user_text %></div>
+    <div class="show_user_btns">
+      <div class="show_user_btn">編集 or フォローする
+      </div>
+    </div>
+    <div class="show_user_status_field">
+      <div class="show_user_status">フォロー</div>
+      <div class="show_user_status">フォロワー</div>
+      <div class="show_user_status">お気に入りリスト</div>
+    </div>
+    <div class="show_list_name">
+      <ul>公開リスト一覧
+        <li>リスト1</li>
+        <li>リスト2</li>
+        <li>リスト3</li>
+      </ul>
+    </div>
+  <div>
+</div>
