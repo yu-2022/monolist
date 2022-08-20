@@ -1,25 +1,4 @@
-<header>
-  <div class="header_left">
-    <%= link_to 'MonoList', root_path, class: "header_logo" %>
-    <%= link_to 'リスト作成', new_list_path, remote: true, class: "header_list_btn" %>
-  </div>
-  <div class="header_right">
-    <div class="header_page_user">
-      <% if user_signed_in? && @user.id != current_user.id %>
-        #{@user.user_name}さんのリスト
-      <% end %>
-    </div>
-    <div class="header_btns">
-      <% if user_signed_in? %>
-        <%= link_to current_user.user_name, user_path(current_user.id), class: "header_btn_left" %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header_btn_right" %>
-      <% else %>
-        <%= link_to 'ログイン', new_user_session_path, class: "header_btn_left" %>
-        <%= link_to '新規登録', new_user_registration_path, class: "header_btn_right" %>
-      <% end %>
-    </div>
-  </div>
-</header>
+<%= render "header2" %>
 
 <%# モーダルウィンドウ %>
 <div id="mask" class="hidden"></div>
@@ -34,7 +13,7 @@
     <div class="index_field">
       <ul>
       <% @lists.each do |list| %>
-        <li class="index_list_name"><%= list.list_name %></li>
+        <li><%= link_to list.list_name, list_path(list.id), class: "index_list_name" %></li>
       <% end %>
       </ul>
     </div>
@@ -44,34 +23,6 @@
   </div>
 
   <div class="index_main_right">
-    <div class="index_list_field">
-      <div class="index_list_upper">
-        <div class="index_list_upper_left">
-          <div>リスト名</div>
-          <div>いいね</div>
-          <div>公開範囲</div>
-        </div>
-        <div class="index_list_upper_right">
-          <div>編集</div>
-          <div>削除</div>
-        </div>
-      </div>
-      <div class="index_list_lower">
-        <div>リスト説明</div>
-      </div>
-    </div>
-    <div class="index_sort_item">アイテム並び替え
-    </div>
-    <div class="index_item_field">
-      <div class="index_item_inner">
-        <div>アイテム名</div>
-        <div>編集</div>
-        <div>削除</div>
-        <div>アイテム説明</div>
-        <div>アイテム画像</div>
-      </div>
-    </div>
-    <div class="index_lower_right">アイテム追加フォーム
-    </div>
-  </div>
+    
+  
 </div>

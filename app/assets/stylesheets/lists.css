@@ -1,3 +1,6 @@
+/***************************************************
+トップページ
+***************************************************/
 .top1{
   height: 100px;
   display: flex;
@@ -82,3 +85,111 @@ footer{
   width: 300px;
   margin: auto;
   text-align: center;
+}
+
+/***************************************************
+モーダルウィンドウ
+***************************************************/
+
+#mask {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modal {
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: translate(0, 0) scale(1);
+  transition: 0.2s;
+  z-index: 2;
+  width: 935px;
+}
+
+#mask.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0) scale(0.8);
+}
+
+.new_list_page{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+/***************************************************
+モーダルウィンドウ：リスト作成
+***************************************************/
+.new_list_page_{
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.new_list_page_title{
+  padding: 20px 0;
+}
+
+.new_list{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.list_form{
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.list_privacy_box{
+  margin-bottom: 20px;
+}
+
+.new_list_btn{
+  margin-bottom: 20px;
+}
+
+/***************************************************
+リスト詳細画面
+***************************************************/
+.index_list_field{
+  height: 60px;
+}
+
+.index_list_upper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.index_list_upper_left{
+  display: flex;
+}
+
+.index_list_upper_right{
+  display: flex;
+}
+
+.index_sort_item{
+  height: 20px;
+}
+
+.index_item_field{
+  height: calc(100% - 60px - 20px - 60px);
+}
+
+.index_lower_right{
+  height: 60px;
+}
