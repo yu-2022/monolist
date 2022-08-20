@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
+  has_many :lists
 
   validates :user_name, presence: true
 
@@ -16,4 +18,5 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
+
 end

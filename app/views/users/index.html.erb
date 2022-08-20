@@ -1,7 +1,7 @@
 <header>
   <div class="header_left">
     <%= link_to 'MonoList', root_path, class: "header_logo" %>
-    <%= link_to 'リスト作成', "#", class: "header_list_btn" %>
+    <%= link_to 'リスト作成', new_list_path, remote: true, class: "header_list_btn" %>
   </div>
   <div class="header_right">
     <div class="header_page_user">
@@ -21,58 +21,57 @@
   </div>
 </header>
 
-<div class="index_sort">
-  <div class="index_sort_left">
-    <div class="index_sort_list">リスト並び替え</div>
+<%# モーダルウィンドウ %>
+<div id="mask" class="hidden"></div>
+  <div id="modal" class="hidden">
+    <p>モーダルウィンドウ<p>
   </div>
-  <div class="index_sort_right">
-    <div class="index_sort_item">アイテム並び替え</div>
-  </div>
-</div>
+<%# //モーダルウィンドウ %>
 
 <div class="index_main">
   <div class="index_main_left">
+    <div class="index_sort_list">リスト並び替え</div>
     <div class="index_field">
-      <div class="index_list_upper">
-        <div class="index_list_upper_left">
-          <div class="index_list_name">リスト名</div>
-          <div class="index_list_fav_btn">いいねボタン</div>
-        </div>
-        <div class="index_list_upper_right">
-          <div class="index_list_privacy">公開範囲</div>
-          <div class="index_list_edit_btn">編集</div>
-          <div class="index_list_delete_btn">削除</div>
-        </div>
-      </div>
-      <div class="index_list_lower">
-        <div class="index_list_text">リスト説明</div>
-      </div>
+      <ul>
+      <% @lists.each do |list| %>
+        <li class="index_list_name"><%= list.list_name %></li>
+      <% end %>
+      </ul>
+    </div>
+    <div class="index_lower_left">
+      タグ検索フォーム
     </div>
   </div>
 
   <div class="index_main_right">
-    <div class="index_item_field">
-      <div class=index_item_left>
-        <div class="index_item_upper">
-          <div class="index_item_name">アイテム名</div>
-          <div class="index_item_date">日付</div>
+    <div class="index_list_field">
+      <div class="index_list_upper">
+        <div class="index_list_upper_left">
+          <div>リスト名</div>
+          <div>いいね</div>
+          <div>公開範囲</div>
         </div>
-        <div class="index_item_lower">
-          <div class="index_item_text">アイテム説明</div>
+        <div class="index_list_upper_right">
+          <div>編集</div>
+          <div>削除</div>
         </div>
       </div>
-      <div class=index_item_right>
-        <div class="index_item_image">アイテム画像</div>
+      <div class="index_list_lower">
+        <div>リスト説明</div>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="index_lower">
-  <div class="index_lower_left">
-    <div class="index_search_form">タグ検索フォーム</div>
-  </div>
-  <div class="index_lower_right">
-    <div class="new_item_form">アイテム追加フォーム</div>
+    <div class="index_sort_item">アイテム並び替え
+    </div>
+    <div class="index_item_field">
+      <div class="index_item_inner">
+        <div>アイテム名</div>
+        <div>編集</div>
+        <div>削除</div>
+        <div>アイテム説明</div>
+        <div>アイテム画像</div>
+      </div>
+    </div>
+    <div class="index_lower_right">アイテム追加フォーム
+    </div>
   </div>
 </div>

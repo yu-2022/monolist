@@ -45,39 +45,42 @@ header{
   color: black;
 }
 
-.index_sort{
+.index_main{
+  height: calc(100vh - 60px);
   display: flex;
+}
+
+.index_main_left{
+  width: 20vw;
+  background-color: #79dae8;
+  padding: 10px;
+}
+
+.index_sort_list{
   height: 30px;
 }
 
-.index_sort_left{
-  width: 30vw;
-  background-color: #79dae8;
-  padding: 5px;
-}
-
-.index_sort_right{
-  width: 70vw;
-  background-color: #e8f9fd;
-  padding: 5px;
-}
-
-.index_main{
-  display: flex;
-  height: calc(100vh - 60px - 30px - 80px);
-}
-.index_main_left{
-  width: 30vw;
-  background-color: #79dae8;
-  padding: 20px;
-  border-bottom: solid 1px gainsboro;
-}
-
 .index_field{
-  width: 100%;
-  border: solid 1px black;
-  border-radius: 10px;
+  height: calc(100% - 30px - 60px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.621);
+}
+
+.index_list_name{
+  margin-bottom: 5px;
+}
+
+.index_lower_left{
+  height: 60px;
+}
+
+.index_main_right{
+  width: 80vw;
+  background-color: #e8f9fd;
   padding: 10px;
+}
+
+.index_list_field{
+  height: 60px;
 }
 
 .index_list_upper{
@@ -89,59 +92,20 @@ header{
   display: flex;
 }
 
-.index_list_name{
-  margin-right: 20px;
-}
-
 .index_list_upper_right{
   display: flex;
 }
 
-.index_list_privacy{
-  margin-right: 20px;
-}
-
-.index_list_edit_btn{
-  margin-right: 20px;
-}
-
-.index_main_right{
-  padding: 20px;
-  width: 70vw;
-  background-color: #e8f9fd;
+.index_sort_item{
+  height: 20px;
 }
 
 .index_item_field{
-  display: flex;
-  justify-content: space-between;
-  border: solid 1px black;
-  width: 100%;
-  padding: 10px;
-}
-
-.index_item_upper{
-  display: flex;
-}
-
-.index_item_name{
-  margin-right: 20px;
-}
-
-.index_lower{
-  display: flex;
-  height: 80px;
-}
-
-.index_lower_left{
-  width: 30vw;
-  padding: 30px;
-  background-color: #79dae8;
+  height: calc(100% - 60px - 20px - 60px);
 }
 
 .index_lower_right{
-  width: 70vw;
-  padding: 20px;
-  background-color: #e8f9fd;
+  height: 60px;
 }
 
 /***************************************************
@@ -184,4 +148,79 @@ header{
 
 .show_list_name{
   text-align: center;
+}
+
+/***************************************************
+モーダルウィンドウ
+***************************************************/
+
+#mask {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modal {
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: translate(0, 0) scale(1);
+  transition: 0.2s;
+  z-index: 2;
+  width: 935px;
+}
+
+#mask.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0) scale(0.8);
+}
+
+.new_list_page{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+/***************************************************
+モーダルウィンドウ：リスト作成
+***************************************************/
+.new_list_page_{
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.new_list_page_title{
+  padding: 20px 0;
+}
+
+.new_list{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.list_form{
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.list_privacy_box{
+  margin-bottom: 20px;
+}
+
+.new_list_btn{
+  margin-bottom: 20px;
 }
