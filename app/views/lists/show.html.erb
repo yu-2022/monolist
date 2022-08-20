@@ -44,15 +44,25 @@
     <div class="index_sort_item">アイテム並び替え
     </div>
     <div class="index_item_field">
+    <% @items.each do |item| %>
       <div class="index_item_inner">
-        <div>アイテム名</div>
+        <div><%= item.item_name %></div>
         <div>編集</div>
         <div>削除</div>
-        <div>アイテム説明</div>
-        <div>アイテム画像</div>
+        <div><%= item.item_text %>アイテム説明</div>
+        <div><%= image_tag item.image.variant(resize: '40x40'), class: 'item_image' if item.image.attached? %></div>
       </div>
+    <% end %>
     </div>
-    <div class="index_lower_right">アイテム追加フォーム
+    <div class="index_lower_right">
+    <%= form_with model: [@list, @item], local: true do |f| %>
+      <%= f.text_area :item_name, class:"new_item_form", id:"item_name", placeholder:"アイテム名（40文字まで)", maxlength:"40", size: "40x1" %>
+      <label class="form_image">
+        <span class="image_file">画像</span>
+        <input type="file" class="hidden">
+      </label>
+      <%= f.submit "追加" ,class:"new_item_btn", size: "5x1" %>
+    <% end %>
     </div>
   </div>
 </div>
