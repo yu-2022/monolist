@@ -3,6 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_many :lists
+  has_many :items
 
   validates :user_name, presence: true
 

@@ -25,6 +25,8 @@ class ListsController < ApplicationController
   def show
     @user = @list.user
     @lists = @user.lists
+    @item = Item.new
+    @items = @list.items
   end
 
   def edit

@@ -190,6 +190,44 @@ footer{
   height: calc(100% - 60px - 20px - 60px);
 }
 
+.index_item_inner{
+  border: solid 1px;
+}
+
 .index_lower_right{
   height: 60px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+textarea, input {
+  vertical-align: top;
+}
+
+.new_item_form{
+  resize: none;
+}
+
+.form_image {
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  padding: 10px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.new_item_btn{
+  width: 80px;
+  border: solid 1px white;
+  background: #0aa1dd;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
 }
