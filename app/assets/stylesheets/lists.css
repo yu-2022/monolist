@@ -152,6 +152,7 @@ footer{
 .list_form{
   width: 50%;
   margin-bottom: 20px;
+  resize: none;
 }
 
 .list_privacy_box{
@@ -159,7 +160,7 @@ footer{
 }
 
 .new_list_btn{
-  margin-bottom: 20px;
+  margin: 20px 0 ;
 }
 
 /***************************************************
@@ -167,6 +168,7 @@ footer{
 ***************************************************/
 .index_list_field{
   height: 60px;
+  border-bottom: solid 1px #79dae8;
 }
 
 .index_list_upper{
@@ -184,6 +186,8 @@ footer{
 
 .index_sort_item{
   height: 20px;
+  text-align: right;
+  margin-bottom: 10px;
 }
 
 .index_item_field{
@@ -191,7 +195,15 @@ footer{
 }
 
 .index_item_inner{
+  height: 80px;
   border: solid 1px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.index_item_inner_right{
+  display: flex;
 }
 
 .index_lower_right{
@@ -210,13 +222,13 @@ textarea, input {
 }
 
 .form_image {
-  font-size: 12px;
   background-color: lightblue;
   color: white;
-  padding: 10px;
+  padding: 5px;
   width: 60px;
-  margin: 5px 10px;
+  margin: 5px 5px;
   text-align: center;
+  cursor: pointer;
 }
 
 .hidden {
@@ -224,7 +236,8 @@ textarea, input {
 }
 
 .new_item_btn{
-  width: 80px;
+  width: 70px;
+  margin-left: 10px;
   border: solid 1px white;
   background: #0aa1dd;
   color: white;

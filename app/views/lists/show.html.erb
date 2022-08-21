@@ -46,23 +46,30 @@
     <div class="index_item_field">
     <% @items.each do |item| %>
       <div class="index_item_inner">
-        <div><%= item.item_name %></div>
-        <div>編集</div>
-        <div>削除</div>
-        <div><%= item.item_text %>アイテム説明</div>
-        <div><%= image_tag item.image.variant(resize: '40x40'), class: 'item_image' if item.image.attached? %></div>
+        <div class="index_item_inner_left">
+          <div class="index_item_inner_upper"><%= item.item_name %></div>
+          <div class="index_item_inner_middle"><%= item.item_text %></div>
+          <div class="index_item_inner_lower"><%= item.item_date %></div>
+        </div>
+        <div class="index_item_inner_right">
+          <%= image_tag item.image.variant(resize: '80x80'), class: 'item_image' if item.image.attached? %>
+          <div><%= link_to '編集', edit_list_item_path(item.list_id, item.id), remote: true %></div>
+          <div><%= link_to '削除', list_item_path(item.list_id, item.id), method: :delete %></div>
+        </div>
       </div>
     <% end %>
     </div>
+
     <div class="index_lower_right">
     <%= form_with model: [@list, @item], local: true do |f| %>
       <%= f.text_area :item_name, class:"new_item_form", id:"item_name", placeholder:"アイテム名（40文字まで)", maxlength:"40", size: "40x1" %>
       <label class="form_image">
-        <span class="image_file">画像</span>
-        <input type="file" class="hidden">
-      </label>
+          <%= f.file_field :image, class: "hidden" %>
+          <span class="image_file">画像</span>
+        </label>
       <%= f.submit "追加" ,class:"new_item_btn", size: "5x1" %>
     <% end %>
     </div>
+
   </div>
 </div>
