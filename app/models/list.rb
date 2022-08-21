@@ -3,7 +3,7 @@ class List < ApplicationRecord
   belongs_to :privacy
   
   belongs_to :user
-  has_many :items
+  has_many :items, dependent: :destroy
 
   validates :list_name,  presence: true
   validates :privacy_id, numericality: { other_than: 1, message: "can't be blank" }
