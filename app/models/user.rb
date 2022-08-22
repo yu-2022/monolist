@@ -5,7 +5,10 @@ class User < ApplicationRecord
   has_many :lists
   has_many :items
 
-  validates :user_name, presence: true
+  validates :user_name, presence: true, length: { maximum: 10 }
+
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  validates_format_of :password, with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください(半角)'
 
   def update_without_current_password(params, *options)
     params.delete(:current_password)
