@@ -5,7 +5,7 @@ class List < ApplicationRecord
   belongs_to :user
   has_many :items, dependent: :destroy
 
-  validates :list_name,  presence: true
+  validates :list_name,  presence: true, length: { maximum: 40 }
   validates :privacy_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :user,       presence: true
 
