@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:index, :show]
+  before_action :set_user_lists, only: [:index, :show]
   
   def index
-    @lists = @user.lists
   end
 
   def show
@@ -11,8 +10,9 @@ class UsersController < ApplicationController
 
   private
 
-  def set_user
+  def set_user_lists
     @user = User.find(params[:id])
+    @lists = @user.lists
   end
 
 end

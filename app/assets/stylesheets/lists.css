@@ -55,6 +55,7 @@
 .top3_field{
   margin: 0 auto;
   width: 400px;
+  overflow: scroll;
 }
 
 .top3_title{
@@ -180,6 +181,10 @@ footer{
   display: flex;
 }
 
+.index_list_fav{
+  cursor: pointer;
+}
+
 .index_list_upper_right{
   display: flex;
 }
@@ -192,6 +197,7 @@ footer{
 
 .index_item_field{
   height: calc(100% - 60px - 20px - 60px);
+  overflow: scroll;
 }
 
 .index_item_inner{
@@ -200,6 +206,12 @@ footer{
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+}
+
+.index_item_inner_middle{
+  overflow: hidden;
+  height: 25px;
+  max-width: 900px;
 }
 
 .index_item_inner_right{

@@ -3,6 +3,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
   def index
+    @lists = List.limit(10).includes(:fav_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
   end
 
   def new

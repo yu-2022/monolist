@@ -3,7 +3,9 @@ class List < ApplicationRecord
   belongs_to :privacy
   
   belongs_to :user
-  has_many :items, dependent: :destroy
+  has_many :items,     dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :fav_users, through: :favorites, source: :user
 
   validates :list_name,  presence: true, length: { maximum: 40 }
   validates :privacy_id, numericality: { other_than: 1, message: "can't be blank" }

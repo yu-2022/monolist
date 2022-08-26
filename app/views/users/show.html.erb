@@ -14,13 +14,13 @@
     <div class="show_user_status_field">
       <div class="show_user_status">フォロー</div>
       <div class="show_user_status">フォロワー</div>
-      <div class="show_user_status">お気に入りリスト</div>
+      <div class="show_user_status"><%= link_to 'お気に入りリスト', favorites_path(id: @user.id) %></div>
     </div>
     <div class="show_list_name">
       <ul>公開リスト一覧
-        <li>リスト1</li>
-        <li>リスト2</li>
-        <li>リスト3</li>
+      <% @lists.each do |list|%>
+        <li><%= list.list_name%></li>
+      <% end %>
       </ul>
     </div>
   <div>

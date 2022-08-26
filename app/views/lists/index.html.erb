@@ -22,16 +22,18 @@
 <div class="top3">
   <div class="top3_field">
     <div class="top3_title">Popular Lists</div>
+    <% @lists.each do |list| %>
     <div class="top3_list_field">
       <div class="top_list_upper">
-        <div class="top_list_name">リスト名</div>
-        <div class="top_list_fav">いいね</div>
-        <div class="top_list_user">ユーザー名</div>
+        <div class="top_list_name"><%= link_to list.list_name, list_path(list) %></div>
+        <div class="top_list_fav"><%= list.favorites.length %>いいね</div>
+        <div class="top_list_user"><%= link_to list.user.user_name, user_path(list.user) %></div>
       </div>
       <div class="top_list_lower">
-        <div class="top_list_text">リスト説明</div>
+        <div class="top_list_text"><%= list.list_text %></div>
       </div>
     </div>
+    <% end %>
   </div>
 </div>
 
