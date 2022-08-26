@@ -1,8 +1,8 @@
 <%= render "users/header2" %>
 
 <%# モーダルウィンドウ %>
-<div id="mask" class="hidden"></div>
-  <div id="modal" class="hidden">
+<div id="mask", class="hidden"></div>
+  <div id="modal", class="hidden">
     <p>モーダルウィンドウ<p>
   </div>
 <%# //モーダルウィンドウ %>
@@ -27,7 +27,9 @@
       <div class="index_list_upper">
         <div class="index_list_upper_left">
           <div><%= @list.list_name %></div>
-          <div>いいね</div>
+          <div id="fav_box">
+            <%= render partial: 'fav', locals: {list: @list} %>
+          </div>
           <div><%= @list.privacy.name %></div>
         </div>
         <div class="index_list_upper_right">
@@ -73,3 +75,4 @@
 
   </div>
 </div>
+

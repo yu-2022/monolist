@@ -4,6 +4,8 @@ class User < ApplicationRecord
          
   has_many :lists
   has_many :items
+  has_many :favorites, dependent: :destroy
+  has_many :fav_lists, through: :favorites, source: :list
 
   validates :user_name, presence: true, length: { maximum: 10 }
 

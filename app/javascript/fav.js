@@ -1,0 +1,1 @@
+document.getElementById("fav_box").innerHTML = '<%= escape_javascript(render partial: 'fav', locals: { list: @list }) %>'

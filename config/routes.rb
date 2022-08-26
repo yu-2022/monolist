@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :lists do
     resources :items, only: [:create, :edit, :update, :destroy]
   end
+  resources :favorites, only: [:index, :create, :destroy]
 
 end
