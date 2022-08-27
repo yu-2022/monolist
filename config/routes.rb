@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :lists do
     resources :items, only: [:create, :edit, :update, :destroy]
+    collection do
+      get 'search'
+    end
   end
   resources :favorites, only: [:index, :create, :destroy]
   resources :tags do

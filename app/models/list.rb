@@ -11,4 +11,10 @@ class List < ApplicationRecord
   validates :privacy_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :user,       presence: true
 
+  def self.search(search)
+    if search != ""
+      List.where('list_name LIKE(?)', "%#{search}%")
+    end
+  end
+
 end

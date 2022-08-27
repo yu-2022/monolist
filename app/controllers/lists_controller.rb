@@ -54,6 +54,10 @@ class ListsController < ApplicationController
     redirect_to users_path(id: current_user.id)
   end
 
+  def search
+    @lists = List.limit(20).search(params[:keyword])
+  end
+
   private
 
   def list_params
