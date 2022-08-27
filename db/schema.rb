@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_22_025833) do
+ActiveRecord::Schema.define(version: 2022_08_26_022904) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -64,6 +64,21 @@ ActiveRecord::Schema.define(version: 2022_08_22_025833) do
     t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
+  create_table "tag_maps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_tag_maps_on_item_id"
+    t.index ["tag_id"], name: "index_tag_maps_on_tag_id"
+  end
+
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "tag_name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_name", null: false
     t.string "email", default: "", null: false
@@ -84,4 +99,6 @@ ActiveRecord::Schema.define(version: 2022_08_22_025833) do
   add_foreign_key "items", "lists"
   add_foreign_key "items", "users"
   add_foreign_key "lists", "users"
+  add_foreign_key "tag_maps", "items"
+  add_foreign_key "tag_maps", "tags"
 end

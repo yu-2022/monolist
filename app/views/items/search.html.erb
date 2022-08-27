@@ -24,25 +24,13 @@
     <div class="index_list_field">
       <div class="index_list_upper">
         <div class="index_list_upper_left">
-          <div><%= @list.list_name %></div>
-          <div id="fav_box">
-            <%= render partial: 'fav', locals: {list: @list} %>
-          </div>
-          <div><%= @list.privacy.name %></div>
+          <div>[タグ]<%= @tag.tag_name %></div>
         </div>
-        <div class="index_list_upper_right">
-        <% if @list.user_id == current_user.id %>
-          <div><%= link_to '編集', edit_list_path(@list.id), remote: true %></div>
-          <div><%= link_to '削除', list_path(@list.id), method: :delete %></div>
-        <% end %>
-        </div>
+        <div class="index_list_upper_right"></div>
       </div>
-      <div class="index_list_lower">
-        <div><%= @list.list_text %></div>
-      </div>
+      <div class="index_list_lower"></div>
     </div>
-    <div class="index_sort_item">アイテム並び替え
-    </div>
+    <div class="index_sort_item">アイテム並び替え</div>
     <div class="index_item_field">
     <% @items.each do |item| %>
       <div class="index_item_inner">
@@ -67,16 +55,7 @@
     <% end %>
     </div>
 
-    <div class="index_lower_right">
-    <%= form_with model: [@list, @item], local: true do |f| %>
-      <%= f.text_area :item_name, class:"new_item_form", id:"item_name", placeholder:"アイテム名（40文字まで)", maxlength:"40", size: "40x1" %>
-      <label class="form_image">
-          <%= f.file_field :image, class: "hidden" %>
-          <span class="image_file">画像</span>
-        </label>
-      <%= f.submit "追加" ,class:"new_item_btn", size: "5x1" %>
-    <% end %>
-    </div>
+    <div class="index_lower_right"></div>
 
   </div>
 </div>

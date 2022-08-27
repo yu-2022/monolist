@@ -2,8 +2,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-  has_many :lists
-  has_many :items
+  has_many :lists,     dependent: :destroy
+  has_many :items,     dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :fav_lists, through: :favorites, source: :list
 

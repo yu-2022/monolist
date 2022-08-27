@@ -214,6 +214,14 @@ footer{
   max-width: 900px;
 }
 
+.index_item_inner_lower{
+  display: flex;
+}
+
+.index_item_date{
+  margin-right: 10px;
+}
+
 .index_item_inner_right{
   display: flex;
 }
