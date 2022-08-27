@@ -30,7 +30,13 @@
                   start_year: 1930,
                   end_year: (Time.now.year + 100),
                   date_separator: '%s') %>
+      </div>
+      <div class="new_list_inner">
+        <div class="new_list_title">
+          タグ
         </div>
+        <%= f.text_field :tag_name, class:"list_form", id:"tag_name", placeholder:"カンマ(,)を入力することで複数のタグを付けることができます" %>
+      </div>
       <div>
         <label class="form_image">
           <%= f.file_field :image, class: "hidden" %>

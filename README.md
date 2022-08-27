@@ -45,6 +45,7 @@
 
 - belongs_to :user
 - belongs_to :list
+- has_many :tags, through :tag_maps
 
 ## favoritesテーブル
 
@@ -57,6 +58,28 @@
 
 - belongs_to :user
 - belongs_to :list
+
+## tagsテーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| tag_name  | string     | null: false                    |
+
+### Association
+
+- has_many :items, through :tag_maps
+
+## tag_mapsテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| item   | references | null: false, foreign_key: true |
+| tag    | references | null: false, foreign_key: true |
+
+### Association
+
+- has_many :items
+- has_many :tags
 
 ## followsテーブル
 

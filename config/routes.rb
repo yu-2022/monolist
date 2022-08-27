@@ -10,5 +10,8 @@ Rails.application.routes.draw do
     resources :items, only: [:create, :edit, :update, :destroy]
   end
   resources :favorites, only: [:index, :create, :destroy]
+  resources :tags do
+    get 'items', to: 'items#search'
+  end
 
 end
