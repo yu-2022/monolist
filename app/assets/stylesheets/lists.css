@@ -41,6 +41,8 @@
   text-align: center;
   color: white;
   font-size: 30px;
+  padding-top: 40px;
+  margin-bottom: 20px;
 }
 
 .top2_text2{
@@ -181,12 +183,20 @@ footer{
   display: flex;
 }
 
+.index_list_upper_inner{
+  margin-right: 10px;
+}
+
 .index_list_fav{
   cursor: pointer;
 }
 
 .index_list_upper_right{
   display: flex;
+}
+
+.index_list_upper_inner_{
+  margin-left: 10px;
 }
 
 .index_sort_item{
@@ -202,7 +212,7 @@ footer{
 
 .index_item_inner{
   height: 80px;
-  border: solid 1px;
+  border: solid 1px #0aa1dd;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -224,6 +234,14 @@ footer{
 
 .index_item_inner_right{
   display: flex;
+}
+
+.item_image:hover{
+  transform: scale(2, 2);
+}
+
+.index_item_inner_{
+  margin-left: 10px;
 }
 
 .index_lower_right{

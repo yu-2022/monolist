@@ -86,7 +86,7 @@
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
 | follower | references | null: false, foreign_key: true |
-| followee | references | null: false, foreign_key: true |
+| followed | references | null: false, foreign_key: true |
 
 ### Association
 

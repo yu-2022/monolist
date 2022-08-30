@@ -123,4 +123,6 @@ header{
 
 .show_list_name{
   text-align: center;
+  margin-top: 10px;
+  border-top: 1px solid #79dae8;
 }
