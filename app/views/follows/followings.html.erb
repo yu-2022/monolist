@@ -1,0 +1,12 @@
+<%= render partial: 'users/header'%>
+
+<div class="main_base">
+  <div class="main_base_">
+    <div class="show_user_name_field"><%= @user.user_name %>さんのフォロー</div>
+    <div class="show_user_text">
+    <% @users.each do |user| %>
+      <%= link_to user.user_name, user_path(user) %><br>
+    <% end %>
+    </div>
+  <div>
+</div>

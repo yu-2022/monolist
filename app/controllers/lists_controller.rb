@@ -43,7 +43,7 @@ class ListsController < ApplicationController
 
   def update
     if @list.update(list_params)
-      redirect_to users_path(id: current_user.id)
+      redirect_to list_path(id: @list.id)
     else
       render :edit
     end
