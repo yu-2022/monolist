@@ -64,5 +64,3 @@ gem 'pry-rails'
 
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
-
-gem 'acts-as-taggable-on', '~> 6.0'
